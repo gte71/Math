@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.teljstedt.math.quizActivity">
+
+    <Button
+            android:layout_width="297dp"
+            android:layout_height="wrap_content" android:layout_marginRight="40dp"
+            app:layout_constraintRight_toRightOf="parent" android:id="@+id/pbNext"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.84" android:text="@string/pbNext_Text" android:onClick="nextQuiz"/>
+    <TextView
+            android:layout_width="88dp"
+            android:layout_height="41dp"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/term1"
+            app:layout_constraintEnd_toStartOf="@+id/operation"
+            android:layout_marginEnd="16dp" android:textAlignment="textEnd"
+            app:layout_constraintTop_toTopOf="@+id/operation"/>
+    <TextView
+            android:layout_width="88dp"
+            android:layout_height="39dp"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/term2"
+            app:layout_constraintStart_toEndOf="@+id/operation" android:layout_marginStart="16dp"
+            android:textAlignment="viewStart" app:layout_constraintTop_toTopOf="@+id/operation"
+    />
+    <EditText
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" android:id="@+id/answer"
+            app:layout_constraintHorizontal_bias="0.502"
+            android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/equals"
+            android:textAlignment="center"/>
+    <TextView
+            android:text="+"
+            android:layout_width="45dp"
+            android:layout_height="44dp"
+            android:id="@+id/operation"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" android:textAlignment="center"
+            app:layout_constraintHorizontal_bias="0.501" android:layout_marginTop="36dp"
+            app:layout_constraintTop_toBottomOf="@+id/quizType"/>
+    <TextView
+            android:text="="
+            android:layout_width="45dp"
+            android:layout_height="44dp"
+            android:id="@+id/equals" app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" app:layout_constraintHorizontal_bias="0.501"
+            android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/operation"
+            android:textAlignment="center"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/quizType" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent"
+            android:textSize="24sp" android:textStyle="bold" android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp"
+            android:text="sometext"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/total"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/correct" android:layout_marginEnd="8dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/correct"
+            app:layout_constraintTop_toTopOf="@+id/total" app:layout_constraintEnd_toStartOf="@+id/wrong"
+            android:layout_marginEnd="8dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/wrong"
+            app:layout_constraintTop_toTopOf="@+id/total"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"/>
+</android.support.constraint.ConstraintLayout>
