@@ -1,19 +1,26 @@
 package com.teljstedt.math.persistance;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.*;
 
 import java.util.List;
 
 @Dao
 public interface UserDao {
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(User user);
     @Update
     void update(User... users);
     @Delete
     void delete(User... users);
+
+    @Query("DELETE FROM user")
+    void deleteAll();
     @Query("SELECT * FROM user")
-    List<User> getAllUsers();
+    LiveData<List<User>> getAllUsers();
     @Query("SELECT * from user where uid=:uid")
-    User findUser(final int uid);
+    LiveData<User> getUserByUid(final int uid);
+
+    @Query("SELECT * from user where name=:name")
+    LiveData<User> getUserByName(final String name);
 }

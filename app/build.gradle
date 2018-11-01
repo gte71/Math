@@ -25,13 +25,16 @@ android {
 
 dependencies {
     // ROOM dependency
-    implementation "android.arch.persistence.room:runtime:1.1.1"
-    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
-    // optional - Guava support for Room, including Optional and ListenableFuture
-    implementation "android.arch.persistence.room:guava:1.1.1"
-    // Test helpers
-    testImplementation "android.arch.persistence.room:testing:1.1.1"
+    implementation "android.arch.persistence.room:runtime:$rootProject.roomVersion"
+    annotationProcessor "android.arch.persistence.room:compiler:$rootProject.roomVersion"
+    androidTestImplementation "android.arch.persistence.room:testing:$rootProject.roomVersion"
+
+    implementation "android.arch.persistence.room:guava:$rootProject.guavaVersion"
     // end of ROOM
+    // Lifecycle components
+    implementation "android.arch.lifecycle:extensions:$rootProject.archLifecycleVersion"
+    annotationProcessor "android.arch.lifecycle:compiler:$rootProject.archLifecycleVersion"
+    // end of Lifecycle
 
     implementation 'com.android.support:support-v4:26.1.0'
     compile fileTree(include: ['*.jar'], dir: 'libs')

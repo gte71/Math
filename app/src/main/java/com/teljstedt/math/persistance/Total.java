@@ -3,12 +3,14 @@ package com.teljstedt.math.persistance;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
 
-@Entity(foreignKeys = @ForeignKey(entity = User.class, parentColumns = "uid", childColumns = "uId", onDelete = 1))
+@Entity(foreignKeys = @ForeignKey(entity = User.class, parentColumns = "uid", childColumns = "uid", onDelete = 1))
 public class Total {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     public final int id;
     public final int uid;
+    @NonNull
     public String week;
     public Integer cntTotalWeek;
     public Integer points;
